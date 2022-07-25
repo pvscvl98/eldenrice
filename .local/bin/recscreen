@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -s 1920x1080 -f x11grab -i :0.0 -f alsa -i hw:1  $HOME/Videos/rec/out.mkv 

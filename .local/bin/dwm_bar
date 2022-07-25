@@ -1,0 +1,39 @@
+#!/bin/bash
+
+interval=0
+
+net()
+{
+  printf "$(ip a | grep wlp3s0 -A 1 | grep inet | awk '{print $2}')"
+}
+
+cpu()
+{
+  cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
+  printf "$cpu_val"
+}
+
+mem()
+{
+  printf "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+}
+
+bat()
+{
+  CAPACITY="$(cat /sys/class/power_supply/BAT0/capacity)"
+  printf "$CAPACITY%%"
+}
+
+clock()
+{
+  printf "$(date '+%a, %I:%M %p')"
+}
+
+while true;
+do
+  [ $interval == 0 ] || [ $(($interval % 3600)) == 0 ]
+  interval=$((interval + 1))
+
+  sleep 1 && xsetroot -name "[/]$(net) []$(cpu) []$(mem) []$(bat) [$(clock)]"
+done
+

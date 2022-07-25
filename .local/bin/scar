@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scrot -z -s "$HOME/img/scsh/%m-%d_%H-%M-%S.png"

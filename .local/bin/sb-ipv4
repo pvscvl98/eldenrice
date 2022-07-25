@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# script to display ipv4 address of a specific net device
+
+ip a | grep "inet " | grep "wlp3s0" | cut -d' ' -f6

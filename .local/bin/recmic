@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ffmpeg -f alsa -i hw:1  $HOME/Videos/rec/out.wav 
+#ffmpeg -f pulse -i 1  $HOME/Videos/rec/out.wav

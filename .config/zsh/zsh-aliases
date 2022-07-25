@@ -1,0 +1,38 @@
+#!/bin/sh
+
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+
+# colorize
+alias l="ls --color -hF"
+alias ll="ls --color -lhF"
+alias la="ls --color -alhF"
+alias ip="ip --color=auto"
+alias pacman="pacman --color=always"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+
+# custom aliases
+alias Syu="sudo pacman -Syyu"
+alias Qs="sudo pacman -Qs"
+alias Ss="sudo pacman -Ss"
+alias S="sudo pacman -S"
+alias R='sudo pacman -Rns "$(pacman -Qtdq)"'
+alias nv="nvim"
+alias nb="newsboat -r --config-file=$HOME/.config/newsboat/config"
+alias hexe="hexedit"
+alias loc="plocate"
+alias history="history 0"
+alias clearr="clear && echo '' > ~/.zsh_history"
+alias ytd="yt-dlp -f 'bestaudio' -x --audio-format m4a -o '%(title)s.%(ext)s'"
+
+# confirm overwriting
+#alias cp="cp -iv"
+#alias mv="mv -iv"
+alias rm="rm -Iv"
+
+# systemd
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"
+alias lsys="systemctl list-unit-files --state=enabled"
+alias lserv="systemctl list-units --type=service"
+alias err="sudo journalctl -xkb -p3"

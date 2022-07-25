@@ -1,0 +1,124 @@
+#!/bin/sh
+
+if [[ "$PATH" =~ (^|:)"$HOME/.local/bin"(|/)(:|$) ]]; then
+
+	else
+		export PATH=$PATH:"$HOME/.local/bin/"
+fi
+
+# default programs
+export EDITOR="vim"
+export VISUAL="vim"
+export TERMINAL="st"
+export BROWSER="brave"
+
+# ~/ clean-up: consult arch wiki to do it properly
+#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export GNUPGHOME="$HOME/.local/000/gnupg"
+export PASSWORD_STORE_DIR="$HOME/.local/000/.password-store"
+export PASSWORD_STORE_X_SELECTION=primary
+export LESSHISTFILE="-"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/.gtkrc-2.0"
+
+# other program settings
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+
+# go env
+export GOPATH="$HOME/.local/src/go"
+export GOBIN="$GOPATH/bin"
+if [[ "$PATH" =~ (^|:)"$GOBIN"(|/)(:|$) ]]; then
+
+	else
+			export PATH=$PATH:"$GOBIN"
+fi
+
+# qt5ct
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# enable/configure color support of man and less
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;36m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[1;33m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
+export LESS_TERMCAP_ue=$'\E[0m'
+
+export LF_ICONS="di=📁:\
+		fi=📃:\
+		tw=🤝:\
+		ow=📂:\
+		ln=⛓:\
+		or=❌:\
+		ex=🎯:\
+		*.txt=✍:\
+		*.mom=✍:\
+		*.me=✍:\
+		*.ms=✍:\
+		*.png=🖼:\
+		*.webp=🖼:\
+		*.ico=🖼:\
+		*.jpg=📸:\
+		*.jpe=📸:\
+		*.jpeg=📸:\
+		*.gif=🖼:\
+		*.svg=🗺:\
+		*.tif=🖼:\
+		*.tiff=🖼:\
+		*.xcf=🖌:\
+		*.html=🌎:\
+		*.xml=📰:\
+		*.gpg=🔒:\
+		*.css=🎨:\
+		*.pdf=📚:\
+		*.djvu=📚:\
+		*.epub=📚:\
+		*.csv=📓:\
+		*.xlsx=📓:\
+		*.tex=📜:\
+		*.md=📘:\
+		*.r=📊:\
+		*.R=📊:\
+		*.rmd=📊:\
+		*.Rmd=📊:\
+		*.m=📊:\
+		*.mp3=🎵:\
+		*.opus=🎵:\
+		*.ogg=🎵:\
+		*.m4a=🎵:\
+		*.flac=🎼:\
+		*.wav=🎼:\
+		*.mkv=🎥:\
+		*.mp4=🎥:\
+		*.webm=🎥:\
+		*.mpeg=🎥:\
+		*.avi=🎥:\
+		*.mov=🎥:\
+		*.mpg=🎥:\
+		*.wmv=🎥:\
+		*.m4b=🎥:\
+		*.flv=🎥:\
+		*.zip=📦:\
+		*.rar=📦:\
+		*.7z=📦:\
+		*.tar.gz=📦:\
+		*.z64=🎮:\
+		*.v64=🎮:\
+		*.n64=🎮:\
+		*.gba=🎮:\
+		*.nes=🎮:\
+		*.gdi=🎮:\
+		*.info=ℹ:\
+		*.log=📙:\
+		*.iso=📀:\
+		*.img=📀:\
+		*.bib=🎓:\
+		*.ged=👪:\
+		*.part=💔:\
+		*.jar=♨:\
+		*.java=♨:\
+		"

@@ -1,0 +1,19 @@
+# keyboard layout
+setxkbmap de &
+
+# set keypress repeat delay
+xset r rate 180 30
+
+# hide mouse cursor after 3 seconds of inactivity
+unclutter -idle 3 &
+
+# set background image
+feh --no-fehbg --bg-scale ~/img/glry/the-blade-of-miquella-by-anatofinnstark.jpg
+
+# window transparency and blur by picom
+picom --experimental-backends &
+
+# xsetroot -name "void" &
+
+# start dwm 
+exec dwm

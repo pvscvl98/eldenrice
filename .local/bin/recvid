@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#ffmpeg -s 1280x720 -f v4l2 -i /dev/video0 -f alsa -i hw:1  $HOME/Videos/rec/out.mkv 
+ffmpeg -s 1280x720 -f v4l2 -i /dev/video0 $HOME/Videos/rec/out.mkv 

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for dev in `find /dev -iname 'video*' -printf "%f\n"`
+do
+  v4l2-ctl --list-formats --device /dev/$dev | \
+    grep -qE '\[[0-9]\]' && \
+    echo $dev `cat /sys/class/video4linux/$dev/name` && \
+	v4l2-ctl --info --device /dev/$dev
+done
+

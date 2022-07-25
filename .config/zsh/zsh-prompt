@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#regular
+PROMPT=$'%F{%(#.red.white)}┌───(%B%F{%(#.red.red)}%n%(#.💀.💀)%m%b%F{%(#.red.white)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.red.white)}]\n└─%B%(#.%F{red}#.%F{red}$)%b%F{reset} '
+
+#gruvbox
+#PROMPT=$'%F{%(#.red.white)}┌───(%B%F{%(#.red.white)}%n%(#.💀.💀)%m%b%F{%(#.red.white)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.red.white)}]\n└─%B%(#.%F{white}#.%F{white}$)%b%F{reset} '
+
+#testing
+#PROMPT=$'%F{%(#.red.white)}┌───(%F{%(#.red.green)}%n%(#.💀.💀)%m%b%F{%(#.red.white)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.red.white)}]\n└─%(#.%F{white}#.%F{green}$)%b%F{reset} '
